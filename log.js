@@ -4,8 +4,8 @@
     var monitorToken = null;
     var queue = [];
     var logf;
-    var server = "[ MACIP ]"; // Magically replaced with the current IP of the server.
-    var port = "[ PORT ]";    // Ditto.
+    var server = "[ MACIP ]"; // Replace this with the IP of the host where rlogger.js is running.
+    var port = "[ PORT ]";    // Replace this with the PORT where rlogger.js is running.
     var sendLogToken = null;
 
     function segments(s) {
@@ -124,15 +124,6 @@
 			if (!window.console) window.console = console;
             window.console.log = logf;
 
-            // ["log", "error", "debug"].forEach(function(f) {
-            //     window.console[f] = logf;
-            // });
-            // window.setTimeout(function() {
-            //     window.console.log("============ LOG TEST ============");
-            //     window.console.debug("============ DEBUG TEST ============");
-            //     window.console.error("============ ERROR TEST ============");
-            // }, 3000);
-
             this.debug = function() {
                 if (enableDebug) k.apply(console, arguments);
             };
@@ -142,7 +133,7 @@
     };
 
     rjsl.init();
-    // "TICKET" is magically replaced with the current ticket number
-    console.log("[ TICKET ] Remote JavaScript logging loaded. (generated: [ TIMESTAMP ], location: " + window.location.href);
+    // If desired, replace "TICKET" with the current ticket you're working on so you can filter rlogger.js output.
+    console.log("[ TICKET ] Remote JavaScript logging loaded. location: " + window.location.href);
     console.log("[ TICKET ] user agent: " + window.navigator.userAgent);
 })();
