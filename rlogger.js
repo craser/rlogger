@@ -1,3 +1,7 @@
+/*********************************************************************************
+ * This file creates a little node server on your machine that listens
+ * for http calls from log.js.
+ */
 var port = 8080;
 console.log('port: ' + port);
 require('http').createServer(function(req, res) {

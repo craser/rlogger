@@ -1,3 +1,13 @@
+/*********************************************************************************
+ * Load this into the window you want to debug. (I personally use a
+ * debugging proxy to append this to some .js file that's already
+ * being loaded.)
+ *
+ * This will cause messages passed to console.log() to also be sent to
+ * the little http server created in rlogger.js.
+ */
+
+
 (function() {
     var enableDebug = false;
     var console = null;
